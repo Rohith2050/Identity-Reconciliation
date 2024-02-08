@@ -4,7 +4,7 @@ Identity Reconciliation
 
 Method: POST
 
-Endpoint: `https://****.com/identify](https://rohith-identity-reconciliation.onrender.com/identify`
+Endpoint: `https://rohith-identity-reconciliation.onrender.com/identify`
 
 Request Body:{
 "email":"george@hillvalley.edu",
