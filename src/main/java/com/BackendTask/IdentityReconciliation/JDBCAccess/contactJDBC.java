@@ -52,7 +52,7 @@ public class contactJDBC implements contactDAO {
 
         if (c1.isEmpty()){
             var sql= """
-                Insert into contact_data(id,phone_number,email,linked_id,linked_precedence,created_at,updated_at,deleted_at)
+                Insert into contact_data(id,phone_number,email,linked_id,link_precedence,created_at,updated_at,deleted_at)
                 values (?,?,?,?,?,?,?,?)
                 """;
             int result= jdbcTemplate.update(sql,randId,inputData.getPhoneNumber(),inputData.getEmail(),null,"primary",new Date(),new Date(),null);
@@ -69,7 +69,7 @@ public class contactJDBC implements contactDAO {
                 c.setPhoneNumbers(new String[]{inputData.getPhoneNumber(),b.getPhoneNumber()});
                 c.setSecondaryContactIds(id);
                 var sql= """
-                Insert into contact_data(id,phone_number,email,linked_id,linked_precedence,created_at,updated_at,deleted_at)
+                Insert into contact_data(id,phone_number,email,linked_id,link_precedence,created_at,updated_at,deleted_at)
                 values (?,?,?,?,?,?,?,?)
                 """;
                 int result= jdbcTemplate.update(sql,randId,inputData.getPhoneNumber(),inputData.getEmail(),id,"secondary",b.getCreatedAt(),new Date(),null);
@@ -86,7 +86,7 @@ public class contactJDBC implements contactDAO {
 
                 // Inserting into DB
                 var sql= """
-                Insert into contact_data(id,phone_number,email,linked_id,linked_precedence,created_at,updated_at,deleted_at)
+                Insert into contact_data(id,phone_number,email,linked_id,link_precedence,created_at,updated_at,deleted_at)
                 values (?,?,?,?,?,?,?,?)
                 """;
                 int result= jdbcTemplate.update(sql,randId,inputData.getPhoneNumber(),inputData.getEmail(),id,"secondary",b.getCreatedAt(),new Date(),null);
